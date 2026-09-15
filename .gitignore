@@ -1,0 +1,37 @@
+# This repo is intentionally codeless — it documents the design, not the implementation.
+# These rules are a guardrail: if RTL or build artifacts ever get copied in here by
+# accident, git will not pick them up.
+
+# Hardware source
+*.sv
+*.v
+*.vhd
+*.vh
+*.svh
+
+# Build and synthesis artifacts
+fpga_build/
+sim_build/
+*.bit
+*.config
+*.json
+*.log
+*.hex
+*.fst
+*.vcd
+*.zip
+
+# Toolchain / language leftovers
+__pycache__/
+*.pyc
+.pytest_cache/
+target/
+*.o
+*.elf
+*.bin
+
+# Editor and OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
