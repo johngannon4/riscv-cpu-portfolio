@@ -1,7 +1,6 @@
 # AXI4-Lite Memory Integration
 
-Replacing a magic single-cycle memory with a real latency-insensitive bus — the hardest
-and most instructive part of the project.
+Replacing a magic single-cycle memory with a real latency-insensitive bus.
 
 ← [Back to overview](../README.md)
 
