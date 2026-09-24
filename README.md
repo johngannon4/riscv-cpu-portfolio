@@ -9,7 +9,7 @@ real compiled C and Rust programs.
 > (Penn CIS 4710/5710, Computer Organization & Design) that reuses its assignments
 > across semesters. Publishing the source would hand future students a solution set, so
 > this repo documents the design, the engineering decisions, and the measured results
-> instead. Source available privately on request.
+> instead.
 
 ---
 
@@ -20,7 +20,7 @@ real compiled C and Rust programs.
 | **ISA** | RV32IM (base integer + multiply/divide), user-level |
 | **Microarchitecture** | 6-stage in-order pipeline: `F → G → D → X → M → W` |
 | **Memory interface** | AXI4-Lite, separate read-only instruction port and read/write data port |
-| **Language** | SystemVerilog (~4,300 lines of hand-written RTL) |
+| **Language** | SystemVerilog |
 | **Target** | Lattice ECP5 (ULX3S board), Yosys + nextpnr open-source flow |
 | **Verification** | cocotb + pytest, official `riscv-tests`, Dhrystone, cycle-accurate trace diffing |
 | **Result** | Full marks on both pipelined milestones; all functional and cycle-level tests passing |
@@ -93,8 +93,7 @@ latency-insensitive AXI4-Lite interface with independent read-address, read-data
 write-address, write-data, and write-response channels, rather than through a
 magic single-cycle memory.
 
-This was by far the hardest part of the project, and the interesting difficulties were
-not in the protocol itself but at the seam between a latency-*insensitive* bus and a
+The key implementation difficulties were at the seam between a latency-*insensitive* bus and a
 pipeline with hard timing requirements:
 
 - **Full throughput under stalls.** The pipeline needs a new instruction every cycle,
@@ -217,3 +216,5 @@ Course infrastructure — testbenches, the AXI-Lite memory subordinate (from
 [CIS 5710](https://github.com/cis5710/cis5710-homework). The processor itself —
 adder, divider, and every datapath from single-cycle through pipelined AXI-Lite —
 is our own work.
+
+Documentation drafted with AI assistance; all RTL and design work is our own.
