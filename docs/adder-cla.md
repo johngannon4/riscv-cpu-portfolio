@@ -7,7 +7,7 @@ and checked exhaustively on real silicon.
 
 ---
 
-## Why build an adder by hand
+## Why build a Carry-Lookahead Adder
 
 Addition is the single most frequently exercised operation in the processor — every ALU
 op, every branch target, every load/store address, every `PC + 4`. Its delay is a
