@@ -58,11 +58,6 @@ Eight cycles of latency is worse than one for an isolated divide, but the clock 
 enough that everything *else* in the processor runs quicker, and independent divides no
 longer serialize.
 
-The choice of 8×4 rather than 4×8 or 16×2 is a balance point: enough stages that the
-divider stops being the critical path, few enough that the registered state between
-stages (partial remainder, partial quotient, shifted dividend, plus the instruction's own
-control state) doesn't dominate area.
-
 ---
 
 ## Signed division
